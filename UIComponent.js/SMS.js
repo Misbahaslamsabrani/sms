@@ -13,7 +13,7 @@ const Sms = () => {
 }
 const styles = StyleSheet.create({
     smsMainHeading: {
-      color: "#004d40",
+      color: "white",
       width: 280,
       fontSize: 20,
       fontWeight: "bold"
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: "center",
       height: 50,
+      backgroundColor: "#004d40"
     }
   });
 export default Sms;

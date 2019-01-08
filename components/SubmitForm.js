@@ -47,7 +47,7 @@ class SubmitForm extends Component {
     render() {
         return (
             <View >
-                <View style={{backgroundColor: "#00796b", display: "flex", alignItems: "center"}}><Text style={{fontSize: 15, fontWeight: "bold", color: "white"}}>Submit Form</Text></View>
+                <View style={{backgroundColor: "#26a69a", display: "flex",marginTop: 5, alignItems: "center"}}><Text style={{fontSize: 15, fontWeight: "bold", color: "white"}}>Submit Form</Text></View>
                 <View style={styles.inputMainContainer}>
                  <View style={styles.inputContainer}>
                     <TextInput

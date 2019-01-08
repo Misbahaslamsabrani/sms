@@ -16,13 +16,12 @@ class DisplayData extends Component {
         this.props.pervData();
     }
     render(){
-        console.log(this.props.allStudents)
                 return (
             <ScrollView>
                 <View style={styles.mainMainContainer}>
                     {this.props.allStudents.length > 0 ? (
                         <View>
-                            <View style={{backgroundColor: "#00796b", display: "flex", alignItems: "center"}}><Text style={{fontSize: 15, fontWeight: "bold", color: "white"}}>Student Data</Text></View>
+                            <View style={{backgroundColor: '#26a69a', display: "flex",marginTop: 5, alignItems: "center"}}><Text style={{fontSize: 15, fontWeight: "bold", color: "white"}}>Student Data</Text></View>
                             {this.props.allStudents.map((v, i) => {
                             return (<View key={i} style={styles.mainContainer}>
                                 <View style={styles.number}>
@@ -32,7 +31,7 @@ class DisplayData extends Component {
                                 <View style={styles.DetailBu}>
                                     <Icon
                                     raised
-                                    name={"info-circle"}
+                                    name={"id-badge"}
                                     size = {25}
                                     color='#26a69a'
                                     onPress={() => { this.props.navigation.navigate("Details", { id: i }) }} />
