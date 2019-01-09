@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 import { connect } from "react-redux";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {DeleteStudent, ForEditID, PervData} from '../store/Actions/UserDataActions';
+import {DeleteStudent, ForEditID, PervData, RemoveEditID} from '../store/Actions/UserDataActions';
 class DisplayData extends Component {
     editItem = (id) => {
         this.props.navigation.navigate("Submit Form")
@@ -10,6 +10,7 @@ class DisplayData extends Component {
     }
     delItem = (id) => {
         this.props.delStu(id);
+        this.props.removeeeid();
         
     }
     componentDidMount(){
@@ -34,7 +35,7 @@ class DisplayData extends Component {
                                     name={"id-badge"}
                                     size = {25}
                                     color='#26a69a'
-                                    onPress={() => { this.props.navigation.navigate("Details", { id: i }) }} />
+                                    onPress={() => { this.props.navigation.navigate("Details", { id: v.id}) }} />
                                 </View>
                                 <View style={styles.editBu}>
                                     <Icon raised
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     delBu: { width: 37 },
 })
 mapStateToProps = (state) => {
+    console.log(state)
     return {
         allStudents: state.UserData.allStudents,
     }
@@ -89,7 +91,8 @@ mapDispatchToProps = (dispatch) => {
     return{
         pervData: () => dispatch(PervData()),
         delStu: (did) => dispatch(DeleteStudent(did)),
-        editId: (eid) => dispatch(ForEditID(eid))
+        editId: (eid) => dispatch(ForEditID(eid)),
+        removeeeid: () => dispatch(RemoveEditID()),
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayData);

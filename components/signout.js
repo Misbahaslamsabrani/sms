@@ -4,7 +4,6 @@ import { Card } from 'react-native-elements'
 import { connect } from "react-redux"
 import { LOGOUT } from "../store/Actions/authActions"
 const SignOut = (props) => {
-    console.log(props)
     return (
         <View style={styles.MainContainer}>
             <Card containerStyle={{ backgroundColor: "#f9fbe7" }}

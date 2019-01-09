@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
 })
 mapStateToProps = (state, getProps) => {
     const id = getProps.navigation.state.params.id;
-    const ss = state.UserData.allStudents[id]
+    const ss = state.UserData.allStudents.find(value => 
+        value.id === id)
     return {
         SpecificStudent: ss,
     }

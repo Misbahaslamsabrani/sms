@@ -14,8 +14,7 @@ class SubmitForm extends Component {
             editIndex: "",
           };
     }
-    componentWillReceiveProps = (nextProps) => {
-        
+    componentWillReceiveProps = (nextProps) => {   
         if(nextProps.editFlag){
             const id = nextProps.eeid;
             const s = nextProps.allStudents.find(value => 
@@ -23,6 +22,10 @@ class SubmitForm extends Component {
             
             this.setState({Name: s.name, Age: s.age, Batch: s.batch, Gender: s.gender,
             edit: true, editIndex: id})
+        }
+        else{
+            this.setState({Name: "", Age: "", Batch: "", Gender: "",
+                edit: null, editIndex: ""})
         }
     } 
     
@@ -46,7 +49,7 @@ class SubmitForm extends Component {
     }
     render() {
         return (
-            <View >
+            <View>
                 <View style={{backgroundColor: "#26a69a", display: "flex",marginTop: 5, alignItems: "center"}}><Text style={{fontSize: 15, fontWeight: "bold", color: "white"}}>Submit Form</Text></View>
                 <View style={styles.inputMainContainer}>
                  <View style={styles.inputContainer}>
